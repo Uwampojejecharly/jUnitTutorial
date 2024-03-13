@@ -16,6 +16,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 import org.junit.Test;
 
+
 public class CalculatorTest {
 
 	private static Instant startTime;
