@@ -33,6 +33,34 @@
 			<artifactId>spring-context</artifactId>
 			<version>6.1.5</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>3.12.4</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-core</artifactId>
+			<version>2.0.9</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-module-junit4</artifactId>
+			<version>2.0.9</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-api-mockito2</artifactId>
+			<version>2.0.9</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<properties>
@@ -47,7 +75,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.0.0-M5</version>
+				<version>3.2.5</version>
 				<dependencies>
 					<dependency>
 						<groupId>org.junit.platform</groupId>
@@ -64,11 +92,11 @@
 				<configuration>
 					<source>17</source>
 					<target>17</target>
-					<executable>$JAVA_HOME/bin/javac</executable>
 					<compilerArgs>
 						<arg>--add-opens</arg>
 						<arg>java.base/java.lang=ALL-UNNAMED</arg>
 					</compilerArgs>
+					<executable>${JAVA_HOME}/bin/javac</executable>
 				</configuration>
 			</plugin>
 
@@ -82,6 +110,7 @@
 							<mainClass>fr.charly.jUnitTutorial.jUnitTutorial</mainClass>
 						</manifest>
 					</archive>
+					<outputDirectory>${project.build.directory}</outputDirectory>
 				</configuration>
 			</plugin>
 		</plugins>
